@@ -6,12 +6,14 @@
 ---
 # Summary:
 
-| Software      | Version         | Port         |
-| ------------- | --------------- | ------------ |
-| OS            | Ubuntu 24.04    | UFW: 80, 443 |
-| Database      | MariaDB 12.3    | 3306         |
-| Front         | Apche2 2.4.58   | 80, 443      |
-| Back          | PHP/PHP-FPM 8.3 | Socket       |
+| Software | Version         | Port         |
+| -------- | --------------- | ------------ |
+| OS       | Ubuntu 24.04    | UFW: 80, 443 |
+| Database | MariaDB 12.3    | 3306         |
+| Front    | Apche2 2.4.58   | 80, 443      |
+| Back     | PHP/PHP-FPM 8.3 | Socket       |
+| Code     | Moodle v5.2.1   |              |
+
 > In this exercise you will learn how to setup LAMP stack.
 
 > Make sure your server has access to the internet.
