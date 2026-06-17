@@ -17,6 +17,8 @@
 
 > Moodle website: https://moodle.org/
 
+> Tuning OS and services will be in a separate file.
+
 ---
 # **First switch to `root` user:**
 
@@ -94,6 +96,56 @@ echo -e "\033[32m${MOODLE_DATABASE_USER_PASSWORD}\033[0m" # green text
 
 ```
 
+---
+---
+# Configure Machine IP:
+
+> **NOTE**: You can skip this step but next time you reboot the machine or after a while it might change the IP and then you have to modify the IP in `${MOODLE_APACHE_CONFIG_FILE}` and `config.php`.
+
+```bash
+vim /etc/netplan/*.yaml
+```
+
+> Default file is usually: `/etc/netplan/50-cloud-init.yaml`
+
+> **IMPORTANT**:  Change Interface Name, EXP: `enp0s3`, `ens18`, and every parameter according to your network.
+
+**Automatic:**
+```bash
+network:
+  version: 2
+  ethernets:
+    enp0s3: # Interface Name
+      dhcp4: yes # Automatic
+```
+
+**Static:**
+```bash
+network:
+  version: 2
+  ethernets:
+    ens18: # Interface Name -> enp0s3, ens18
+      dhcp4: no # Static
+      addresses: [192.168.1.120/24] # IP/Subnet
+      dhcp6: no # disable IPV6
+      link-local: [] # disable IPV6
+      routes:
+      - to: "default"
+        via: "192.168.1.1" # Gateway
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1] # DNS Servers
+```
+
+> Save and exit.
+
+**Apply:**
+```bash
+netplan apply
+```
+
+> Now Open a new ssh session with the new IP.
+
+---
 ---
 # Database Installation:
 
