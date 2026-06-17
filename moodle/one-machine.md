@@ -7,7 +7,7 @@
 | Database      | MariaDB 12.3    | 3306         |
 | Front         | Apche2 2.4.58   | 80, 443      |
 | Back          | PHP/PHP-FPM 8.3 | Socket       |
-| Session/Cache | Redis 7.0.15    | 6379         |
+
 
 > Make sure your server has access to the internet.
 
