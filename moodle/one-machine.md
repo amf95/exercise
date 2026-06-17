@@ -61,6 +61,7 @@ APACHE_SSL_CA_FULL_CHAIN=/etc/ssl/certs/CA_fullChain.crt
 
 LANGUAGE=en
 
+
 # Site Name:
 SITE_LONG_NAME="Mansourah University FCI."
 SITE_SHORT_NAME="Mans. F.C.I."
